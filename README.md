@@ -3,22 +3,7 @@
 This service helps to implement a custom pagination.
 
 ## How to install
-- create a `composer.json` file like this:
-```
-{
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/m0r0z0vd/sps.git"
-        }
-    ],
-    "require": {
-        "php": ">=7.2",
-        "m0r0z0vd/sps": "1.0.1"
-    }
-}
-```
-- and run `composer install`
+- `composer require m0r0z0vd/sps`
 
 ### Example usage
 ```
