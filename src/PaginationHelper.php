@@ -2,13 +2,19 @@
 
 namespace MDServices\InjectableVersion;
 
-use MDServices\StaticPaginationHelper as StaticHelper;
+use MDServices\StaticPaginationHelper;
 use MDServices\Structures\PaginationData;
 
 class PaginationHelper
 {
     public const RECORDS_PER_PAGE = 5;
     public const VISIBLE_PAGES_RADIUS = 10;
+    
+    /** @var int */
+    private $recordsPerPage;
+    
+    /** @var int */
+    private $visiblePagesRadius;
 
     /**
      * @param int $recordsPerPage
@@ -18,8 +24,34 @@ class PaginationHelper
         int $recordsPerPage = self::RECORDS_PER_PAGE,
         int $visiblePagesRadius = self::VISIBLE_PAGES_RADIUS
     ) {
-        StaticHelper::$recordsPerPage = $recordsPerPage;
-        StaticHelper::$visiblePagesRadius = $visiblePagesRadius;
+        $this->recordsPerPage = $recordsPerPage;
+        $this->visiblePagesRadius = $visiblePagesRadius;
+        StaticPaginationHelper::$recordsPerPage = $recordsPerPage;
+        StaticPaginationHelper::$visiblePagesRadius = $visiblePagesRadius;
+    }
+
+    /**
+     * @param int $recordsPerPage
+     * @return $this
+     */
+    public function setRecordsPerPage(int $recordsPerPage): self
+    {
+        $this->recordsPerPage = $recordsPerPage;
+        StaticPaginationHelper::$recordsPerPage = $recordsPerPage;
+        
+        return $this;
+    }
+
+    /**
+     * @param int $visiblePagesRadius
+     * @return $this
+     */
+    public function setVisiblePagesRadius(int $visiblePagesRadius): self
+    {
+        $this->visiblePagesRadius = $visiblePagesRadius;
+        StaticPaginationHelper::$visiblePagesRadius = $visiblePagesRadius;
+
+        return $this;
     }
 
     /**
@@ -27,7 +59,7 @@ class PaginationHelper
      */
     public function getLimit(): int
     {
-        return StaticHelper::getLimit();
+        return StaticPaginationHelper::getLimit();
     }
 
     /**
@@ -36,7 +68,7 @@ class PaginationHelper
      */
     public function getOffset(int $page): int
     {
-        return StaticHelper::getOffset($page);
+        return StaticPaginationHelper::getOffset($page);
     }
 
     /**
@@ -45,7 +77,7 @@ class PaginationHelper
      */
     public function getLastPage(int $recordsNumber): int
     {
-        return StaticHelper::getLastPage($recordsNumber);
+        return StaticPaginationHelper::getLastPage($recordsNumber);
     }
 
     /**
@@ -54,6 +86,6 @@ class PaginationHelper
      */
     public function generatePaginationBlock(PaginationData $paginationData): void
     {
-        StaticHelper::generatePaginationBlock($paginationData);
+        StaticPaginationHelper::generatePaginationBlock($paginationData);
     }
 }
