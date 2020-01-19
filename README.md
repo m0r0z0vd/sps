@@ -14,7 +14,7 @@ This service helps to implement a custom pagination.
     ],
     "require": {
         "php": ">=7.2",
-        "m0r0z0vd/sps": "1.0"
+        "m0r0z0vd/sps": "1.0.1"
     }
 }
 ```
