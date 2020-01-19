@@ -1,0 +1,19 @@
+{
+  "name": "m0r0z0vd/sps",
+  "description": "Simple pagination helper",
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "php": ">=7.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.5",
+    "mockery/mockery": "0.9.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MDServices\\": "src/",
+      "MDServices\\Tests\\": "tests/"
+    }
+  }
+}
