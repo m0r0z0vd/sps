@@ -10,10 +10,10 @@ $data = new PaginationData();
 $data->lastPage = 5;
 $data->records = [
     [
-        'email' => 'email@eamil.com'
+        'email' => 'email@email.com'
     ],
     [
-        'email' => 'some.email@eamil.com'
+        'email' => 'some.email@email.com'
     ]
 ];
 $helper = new PaginationHelper();
