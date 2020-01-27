@@ -1,8 +1,7 @@
 <?php
 
-namespace MDServices\InjectableVersion;
+namespace MDServices;
 
-use MDServices\StaticPaginationHelper;
 use MDServices\Structures\PaginationData;
 
 class PaginationHelper

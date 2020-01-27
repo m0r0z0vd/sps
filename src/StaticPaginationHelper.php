@@ -2,7 +2,6 @@
 
 namespace MDServices;
 
-use MDServices\InjectableVersion\PaginationHelper;
 use MDServices\Structures\PageItem;
 use MDServices\Structures\PaginationData;
 
