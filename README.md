@@ -1,4 +1,4 @@
-# Simple pagination helper
+# Simple pagination service
 
 This service helps to implement a custom pagination.
 

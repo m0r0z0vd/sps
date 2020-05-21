@@ -5,7 +5,7 @@ namespace MDServices;
 use MDServices\Structures\PageItem;
 use MDServices\Structures\PaginationData;
 
-class StaticPaginationHelper
+class StaticPaginationService
 {
     private const DOTS = '...';
     private const PREVIOUS = '<<';
@@ -14,10 +14,10 @@ class StaticPaginationHelper
     private const ONE = 1;
 
     /** @var int */
-    public static $recordsPerPage = PaginationHelper::RECORDS_PER_PAGE;
+    public static $recordsPerPage = SimplePaginationService::RECORDS_PER_PAGE;
 
     /** @var int */
-    public static $visiblePagesRadius = PaginationHelper::VISIBLE_PAGES_RADIUS;
+    public static $visiblePagesRadius = SimplePaginationService::VISIBLE_PAGES_RADIUS;
 
     /** @var PageItem[] */
     private static $paginationBlock = [];
