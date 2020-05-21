@@ -7,6 +7,8 @@ use MDServices\Structures\PaginationData;
 
 class StaticPaginationService
 {
+    public const RECORDS_PER_PAGE = 5;
+    public const VISIBLE_PAGES_RADIUS = 10;
     private const DOTS = '...';
     private const PREVIOUS = '<<';
     private const NEXT = '>>';
@@ -14,13 +16,53 @@ class StaticPaginationService
     private const ONE = 1;
 
     /** @var int */
-    public static $recordsPerPage = SimplePaginationService::RECORDS_PER_PAGE;
+    private static $recordsPerPage = self::RECORDS_PER_PAGE;
 
     /** @var int */
-    public static $visiblePagesRadius = SimplePaginationService::VISIBLE_PAGES_RADIUS;
+    private static $visiblePagesRadius = self::VISIBLE_PAGES_RADIUS;
 
     /** @var PageItem[] */
     private static $paginationBlock = [];
+
+    /**
+     * @param int $recordsPerPage
+     */
+    public static function setRecordsPerPage(int $recordsPerPage): void
+    {
+        if ($recordsPerPage < 1) {
+            $recordsPerPage = self::RECORDS_PER_PAGE;
+        }
+
+        self::$recordsPerPage = $recordsPerPage;
+    }
+
+    /**
+     * @return int
+     */
+    public static function getRecordsPerPage(): int
+    {
+        return self::$recordsPerPage;
+    }
+
+    /**
+     * @param int $visiblePagesRadius
+     */
+    public static function setVisiblePagesRadius(int $visiblePagesRadius): void
+    {
+        if ($visiblePagesRadius < 1) {
+            $visiblePagesRadius = self::VISIBLE_PAGES_RADIUS;
+        }
+
+        self::$visiblePagesRadius = $visiblePagesRadius;
+    }
+
+    /**
+     * @return int
+     */
+    public static function getVisiblePagesRadius(): int
+    {
+        return self::$visiblePagesRadius;
+    }
 
     /**
      * @return int

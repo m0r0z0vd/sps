@@ -6,27 +6,16 @@ use MDServices\Structures\PaginationData;
 
 class SimplePaginationService
 {
-    public const RECORDS_PER_PAGE = 5;
-    public const VISIBLE_PAGES_RADIUS = 10;
-    
-    /** @var int */
-    private $recordsPerPage;
-    
-    /** @var int */
-    private $visiblePagesRadius;
-
     /**
      * @param int $recordsPerPage
      * @param int $visiblePagesRadius
      */
     public function __construct(
-        int $recordsPerPage = self::RECORDS_PER_PAGE,
-        int $visiblePagesRadius = self::VISIBLE_PAGES_RADIUS
+        int $recordsPerPage = StaticPaginationService::RECORDS_PER_PAGE,
+        int $visiblePagesRadius = StaticPaginationService::VISIBLE_PAGES_RADIUS
     ) {
-        $this->recordsPerPage = $recordsPerPage;
-        $this->visiblePagesRadius = $visiblePagesRadius;
-        StaticPaginationService::$recordsPerPage = $recordsPerPage;
-        StaticPaginationService::$visiblePagesRadius = $visiblePagesRadius;
+        $this->setRecordsPerPage($recordsPerPage);
+        $this->setVisiblePagesRadius($visiblePagesRadius);
     }
 
     /**
@@ -35,10 +24,17 @@ class SimplePaginationService
      */
     public function setRecordsPerPage(int $recordsPerPage): self
     {
-        $this->recordsPerPage = $recordsPerPage;
-        StaticPaginationService::$recordsPerPage = $recordsPerPage;
+        StaticPaginationService::setRecordsPerPage($recordsPerPage);
         
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRecordsPerPage(): int
+    {
+        return StaticPaginationService::getRecordsPerPage();
     }
 
     /**
@@ -47,10 +43,17 @@ class SimplePaginationService
      */
     public function setVisiblePagesRadius(int $visiblePagesRadius): self
     {
-        $this->visiblePagesRadius = $visiblePagesRadius;
-        StaticPaginationService::$visiblePagesRadius = $visiblePagesRadius;
+        StaticPaginationService::setVisiblePagesRadius($visiblePagesRadius);
 
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getVisiblePagesRadius(): int
+    {
+        return StaticPaginationService::getVisiblePagesRadius();
     }
 
     /**

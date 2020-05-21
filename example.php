@@ -18,6 +18,12 @@ $data->records = [
         'email' => 'some.email@email.com'
     ]
 ];
-$helper = new SimplePaginationService();
-$helper->generatePaginationBlock($data);
+
+$sps = new SimplePaginationService();
+$sps
+    ->setRecordsPerPage(1)
+    ->setVisiblePagesRadius(1)
+    ->generatePaginationBlock($data)
+;
+
 var_dump($data);
