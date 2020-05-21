@@ -17,95 +17,95 @@ $data->records = [
         'email' => 'some.email@email.com'
     ]
 ];
-$helper = new PaginationHelper();
+$helper = new SimplePaginationService();
 $helper->generatePaginationBlock($data);
 var_dump($data);
 ```
 You will see:
 ```
-object(MDServices\Structures\PaginationData)#1 (5) {
-  ["firstPage"]=>
+class MDServices\Structures\PaginationData#1 (5) {
+  public $firstPage =>
   int(1)
-  ["currentPage"]=>
+  public $currentPage =>
   int(1)
-  ["lastPage"]=>
+  public $lastPage =>
   int(5)
-  ["records"]=>
+  public $records =>
   array(2) {
-    [0]=>
+    [0] =>
     array(1) {
-      ["email"]=>
-      string(15) "email@eamil.com"
+      'email' =>
+      string(15) "email@email.com"
     }
-    [1]=>
+    [1] =>
     array(1) {
-      ["email"]=>
-      string(20) "some.email@eamil.com"
+      'email' =>
+      string(20) "some.email@email.com"
     }
   }
-  ["paginationBlock"]=>
+  public $paginationBlock =>
   array(7) {
-    [0]=>
-    object(MDServices\Structures\PageItem)#3 (3) {
-      ["toPage"]=>
+    [0] =>
+    class MDServices\Structures\PageItem#3 (3) {
+      public $toPage =>
       int(0)
-      ["disabled"]=>
+      public $disabled =>
       bool(true)
-      ["text"]=>
+      public $text =>
       string(2) "<<"
     }
-    [1]=>
-    object(MDServices\Structures\PageItem)#4 (3) {
-      ["toPage"]=>
+    [1] =>
+    class MDServices\Structures\PageItem#4 (3) {
+      public $toPage =>
       int(1)
-      ["disabled"]=>
+      public $disabled =>
       bool(true)
-      ["text"]=>
+      public $text =>
       string(1) "1"
     }
-    [2]=>
-    object(MDServices\Structures\PageItem)#5 (3) {
-      ["toPage"]=>
+    [2] =>
+    class MDServices\Structures\PageItem#5 (3) {
+      public $toPage =>
       int(2)
-      ["disabled"]=>
+      public $disabled =>
       bool(false)
-      ["text"]=>
+      public $text =>
       string(1) "2"
     }
-    [3]=>
-    object(MDServices\Structures\PageItem)#6 (3) {
-      ["toPage"]=>
+    [3] =>
+    class MDServices\Structures\PageItem#6 (3) {
+      public $toPage =>
       int(3)
-      ["disabled"]=>
+      public $disabled =>
       bool(false)
-      ["text"]=>
+      public $text =>
       string(1) "3"
     }
-    [4]=>
-    object(MDServices\Structures\PageItem)#7 (3) {
-      ["toPage"]=>
+    [4] =>
+    class MDServices\Structures\PageItem#7 (3) {
+      public $toPage =>
       int(4)
-      ["disabled"]=>
+      public $disabled =>
       bool(false)
-      ["text"]=>
+      public $text =>
       string(1) "4"
     }
-    [5]=>
-    object(MDServices\Structures\PageItem)#8 (3) {
-      ["toPage"]=>
+    [5] =>
+    class MDServices\Structures\PageItem#8 (3) {
+      public $toPage =>
       int(5)
-      ["disabled"]=>
+      public $disabled =>
       bool(false)
-      ["text"]=>
+      public $text =>
       string(1) "5"
     }
-    [6]=>
-    object(MDServices\Structures\PageItem)#9 (3) {
-      ["toPage"]=>
+    [6] =>
+    class MDServices\Structures\PageItem#9 (3) {
+      public $toPage =>
       int(2)
-      ["disabled"]=>
+      public $disabled =>
       bool(false)
-      ["text"]=>
+      public $text =>
       string(2) ">>"
     }
   }
